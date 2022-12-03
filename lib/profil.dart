@@ -7,14 +7,25 @@ class Profil extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.blue,
         title: Text("Profil"),
       ),
-      body: Center(
-        child: Text(
-          "Ini Halaman Profil", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+      body: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+         children: [
+           Text(
+             "Ini halaman profil", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+           ),
+           Container(
+
+           )
+         ],
         ),
       ),
+      backgroundColor: Colors.grey[300],
     );
   }
 }
+
+

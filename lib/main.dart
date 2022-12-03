@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:helloworld/profil.dart';
 
+import 'biodata.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'HomePage',
       theme: ThemeData(
-        primarySwatch: Colors.red,
+        primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(title: 'Homepage'),
       debugShowCheckedModeBanner: false,
@@ -31,21 +33,30 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.blue,
         title: Text(title),
+        actions: [
+          IconButton(
+            icon: Icon(
+              Icons.search,
+            ),
+            onPressed: () {},
+          ),
+        ],
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            SizedBox(
+            const SizedBox(
               height: 35,
               child: Text(
-                "Praktikum 3 Mobile Application || Hello World!",
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                "Praktikum 4 Mobile Application || Appbar, FloatingAction, Body",
+                style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
               ),
             ),
             Column(
-              children: [
+              children: const [
                 Text(
                   "Nama : Feri Fajariandi",
                   style: TextStyle(
@@ -62,12 +73,27 @@ class MyHomePage extends StatelessWidget {
                 ),
               ],
             ),
-            ElevatedButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => Profil()));
-            }, child: Text("Profil"))
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Profil()));
+                },
+                child: Text("Profil")),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Biodata()));
+                },
+                child: Text("Biodataku")),
           ],
         ),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(
+          Icons.add,
+        ),
+      ),// This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
